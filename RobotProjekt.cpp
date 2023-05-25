@@ -34,9 +34,6 @@ int main()
 
     }
 
-    for (int i = 0; i < numberTendons; i++) {
-        cout << TendonAngle[i] << "\n";
-    }
 
     float* Position;
 
