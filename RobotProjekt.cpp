@@ -12,6 +12,13 @@ int main()
     cout << "enter Tendon Number\n";
     int numberTendons;
     cin >> numberTendons;
+    
+    if (numberTendons < 1) {
+        cout << "0 CordX\n";
+        cout << "0 CordY\n";
+        cout << "0 CordZ\n";
+        return 0;
+    }
 
     float currAngle;
     float currCurv;
