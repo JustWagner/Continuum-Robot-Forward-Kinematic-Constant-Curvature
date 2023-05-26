@@ -4,3 +4,6 @@ A forward kinematic for a continuum robot with a variable number of segments of 
 
 # Input Format
 after selecting the number of segments start with the base segment and end with the tip. Each segment requires 3 floats: angle compared to the previous segment / ground, curvature of the segment, and length of the segment.
+
+# Constant Curv Forward
+this function calculates the forward kinematic. It takes 3 vectors storing the segment angles, curvs and lenghts. The output is in form of a float pointer storing x, y and z coordinates
