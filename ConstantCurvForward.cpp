@@ -15,7 +15,7 @@ float* ForwardKin(vector<float> TendonAngle, vector<float> TendonCurv, vector<fl
 
 
     for (int i = TendonAngle.size() - 1; i > 1; i--) {
-        cout << i << " i\n";
+        
         //Translation
         if (TendonCurv[i] == 0) {
 
@@ -37,8 +37,9 @@ float* ForwardKin(vector<float> TendonAngle, vector<float> TendonCurv, vector<fl
 
 
         //RotationZ
-
-        ZRotationDegree = TendonAngle[i - 1] - TendonAngle[i - 2];
+        
+        //ZRotationDegree = TendonAngle[i - 1] + TendonAngle[i - 2];
+        ZRotationDegree = TendonAngle[i - 1];
         PosX = PosX * cos(ZRotationDegree) + PosY * -sin(ZRotationDegree);
         PosY = PosX * sin(ZRotationDegree) + PosY * cos(ZRotationDegree);
 
@@ -84,10 +85,7 @@ float* ForwardKin(vector<float> TendonAngle, vector<float> TendonCurv, vector<fl
         PosZ = PosZ + sin(TendonCurv[0] * TendonLenght[0]) / TendonCurv[0];
 
     }
-    cout << PosX <<" PosX\n";
-    cout << PosY <<" PosY\n";
-    cout << PosZ <<" PosZ\n";
-    cout << " return\n";
+
     static float Position[3];
     Position[0] = PosX;
     Position[1] = PosY;
