@@ -39,9 +39,9 @@ int main()
 
     Position = ForwardKin(TendonAngle, TendonCurv, TendonLenght);
 
-    cout << Position[0] << "\n";
-    cout << Position[1] << "\n";
-    cout << Position[2] << "\n";
+    cout << Position[0] << "XCord\n";
+    cout << Position[1] << "YCord\n";
+    cout << Position[2] << "ZCord\n";
 
 
 
