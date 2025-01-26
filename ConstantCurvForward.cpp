@@ -32,7 +32,7 @@ float* ForwardKin(vector<float> TendonAngle, vector<float> TendonCurv, vector<fl
         //RotationY
 
         YRotationDegree = TendonLenght[i - 1] * TendonCurv[i - 1];
-        PosX = PosX * cos(YRotationDegree) + PosZ * sin(YRotationDegree);
+        PosX2 = PosX * cos(YRotationDegree) + PosZ * sin(YRotationDegree);
         PosZ = PosX * -sin(YRotationDegree) + PosZ * cos(YRotationDegree);
 
 
@@ -40,8 +40,8 @@ float* ForwardKin(vector<float> TendonAngle, vector<float> TendonCurv, vector<fl
         
         //ZRotationDegree = TendonAngle[i - 1] + TendonAngle[i - 2];
         ZRotationDegree = TendonAngle[i - 1];
-        PosX = PosX * cos(ZRotationDegree) + PosY * -sin(ZRotationDegree);
-        PosY = PosX * sin(ZRotationDegree) + PosY * cos(ZRotationDegree);
+        PosX = PosX2 * cos(ZRotationDegree) + PosY * -sin(ZRotationDegree);
+        PosY = PosX2 * sin(ZRotationDegree) + PosY * cos(ZRotationDegree);
 
     }
 
@@ -64,12 +64,12 @@ float* ForwardKin(vector<float> TendonAngle, vector<float> TendonCurv, vector<fl
 
 
         YRotationDegree = TendonLenght[0] * TendonCurv[0];
-        PosX = PosX * cos(YRotationDegree) + PosZ * sin(YRotationDegree);
+        PosX2 = PosX * cos(YRotationDegree) + PosZ * sin(YRotationDegree);
         PosZ = PosX * -sin(YRotationDegree) + PosZ * cos(YRotationDegree);
 
         ZRotationDegree = TendonAngle[0];
-        PosX = PosX * cos(ZRotationDegree) + PosY * -sin(ZRotationDegree);
-        PosY = PosX * sin(ZRotationDegree) + PosY * cos(ZRotationDegree);
+        PosX = PosX2 * cos(ZRotationDegree) + PosY * -sin(ZRotationDegree);
+        PosY = PosX2 * sin(ZRotationDegree) + PosY * cos(ZRotationDegree);
 
     }
     cout << " last tendon\n";
