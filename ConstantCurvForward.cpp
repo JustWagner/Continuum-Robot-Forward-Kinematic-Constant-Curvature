@@ -10,10 +10,11 @@ float* ForwardKin(vector<float> TendonAngle, vector<float> TendonCurv, vector<fl
     float PosX = 0;
     float PosY = 0;
     float PosZ = 0;
+    float PosX2 = 0;
     float YRotationDegree;
     float ZRotationDegree;
 
-
+    //main loop for all tendons excluding the bottom two
     for (int i = TendonAngle.size() - 1; i > 1; i--) {
         
         //Translation
@@ -46,7 +47,7 @@ float* ForwardKin(vector<float> TendonAngle, vector<float> TendonCurv, vector<fl
     }
 
     //Last 2 Translations and Rotations
-
+    //Translation
     if (TendonAngle.size() > 1) {
         cout << " second last\n";
         if (TendonCurv[1] == 0) {
@@ -62,7 +63,7 @@ float* ForwardKin(vector<float> TendonAngle, vector<float> TendonCurv, vector<fl
 
         }
 
-
+        //Rotation
         YRotationDegree = TendonLenght[0] * TendonCurv[0];
         PosX2 = PosX * cos(YRotationDegree) + PosZ * sin(YRotationDegree);
         PosZ = PosX * -sin(YRotationDegree) + PosZ * cos(YRotationDegree);
@@ -72,6 +73,7 @@ float* ForwardKin(vector<float> TendonAngle, vector<float> TendonCurv, vector<fl
         PosY = PosX2 * sin(ZRotationDegree) + PosY * cos(ZRotationDegree);
 
     }
+    //Last translation
     cout << " last tendon\n";
     if (TendonCurv[0] == 0) {
 
